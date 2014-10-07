@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-87151e2d8a3ad0f864d0240e6f73b14b42a2e214.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-699bd414dd913f05650303bc3c6accbefb607e56.jar"
+        jar="C:\Users\vargaa4\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\pre-dexed\debug\classes-1ad111d5079dfd9fe09373f164518ff5928d2f15.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\pre-dexed\debug\classes-73a94dd1de387984398f7f2afa534a95a5fd4851.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-978a1c93cc6eb40d3af837f85253e927b3698fe1.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\pre-dexed\debug\classes-2c685054711014b0874920c5a91a4c54b158f072.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\Spoiler_Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\pre-dexed\debug\classes-44f82a32022bc4afc3866a211ad0dedcbd894df8.jar"
+        jar="C:\Users\vargaa4\AndroidstudioProjects\SpoilerAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef"/>
+
+</pre-dex-items>
