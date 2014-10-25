@@ -6,7 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.spoiler.spoilerandroid.Settings" >
+    tools:context="com.spoiler.spoilerandroid.Settings">
+    <!--android:id="@+id/"-->
+    <!--android:background="#ffffffff">-->
 
     <Button
         android:id="@+id/button1"
@@ -16,7 +18,47 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="64dp"
         android:text="@string/return_home"
-        android:onClick="moveHome" />
+        android:onClick="moveHome"
+        android:textSize="@dimen/activity_horizontal_margin" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Seconds"
+            android:id="@+id/radioButton"
+            android:textSize="@dimen/activity_vertical_margin" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10 Seconds"
+            android:id="@+id/radioButton2"
+            android:textSize="@dimen/activity_vertical_margin" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 Seconds"
+            android:id="@+id/radioButton3"
+            android:textSize="@dimen/activity_vertical_margin" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Desired Amount of Seconds Between Logs"
+        android:textSize="18dp" />
 
 </RelativeLayout>
 <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/layout/activity_settings.xml -->

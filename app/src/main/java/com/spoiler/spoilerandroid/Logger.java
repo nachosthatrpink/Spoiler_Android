@@ -1,5 +1,6 @@
 package com.spoiler.spoilerandroid;
 
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,22 +9,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.location.Location;
+import android.location.LocationManager;
+import android.location.LocationListener;
+
 
 import android.os.Handler;  //used instead of timer
-//import java.util.Timer;
-//import java.util.TimerTask;
-import android.util.Log;
 
 public class Logger extends ActionBarActivity {
 
-//    Timer timer;
     private Handler mHandler = new Handler();
-    int i = 0; //just a placeholder counter for debugging
+//    int i = 0; //just a placeholder counter for debugging
+    private LocationManager locationManager;
+    private LocationListener locationListener;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logger);
+
+
 	}
 
 	@Override
@@ -55,8 +59,10 @@ public class Logger extends ActionBarActivity {
     public Runnable mTick = new Runnable(){
         public void run(){
             TextView t = (TextView)findViewById(R.id.textView1);
-            t.setText("" + i); //this is not displaying correctly
-            i++;
+            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            float speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
+            t.setText(speed + "m/s");
+//            i++;
             mHandler.postDelayed(mTick, 1000);
         }
     };
@@ -66,12 +72,14 @@ public class Logger extends ActionBarActivity {
     	TextView t = (TextView)findViewById(R.id.textView1);
     	t.setText("Logging...");
 
+        //following is for obtaining gps locations (and speeds)
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
         mHandler.removeCallbacks(mTick);
         mHandler.postDelayed(mTick, 1000);
 
-//        timer = new Timer();
-//        LogTask tick = new LogTask();
-//        timer.scheduleAtFixedRate(tick, 0, 5000); //this is not working
+
+
     }
 
     //called on log stop click
