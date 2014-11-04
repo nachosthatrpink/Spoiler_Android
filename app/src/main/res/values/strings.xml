@@ -10,5 +10,6 @@
     <string name="stop_log">Stop</string>
     <string name="return_home">Return Home</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_log_store">LogStore</string>
 
 </resources>

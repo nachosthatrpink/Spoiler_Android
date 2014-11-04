@@ -47,4 +47,10 @@ public class MainActivity extends ActionBarActivity {
     	Intent intent = new Intent(view.getContext(), Settings.class);
     	startActivity(intent);
     }
+
+    //called on log library button click
+    public void moveStore(View view){
+        Intent intent = new Intent(view.getContext(), LogStore.class);
+        startActivity(intent);
+    }
 }

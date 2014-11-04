@@ -22,11 +22,10 @@
         android:id="@+id/settingsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/logButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp"
         android:text="@string/action_settings"
-        android:onClick="moveSettings" />
+        android:onClick="moveSettings"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/titleText"
@@ -36,5 +35,15 @@
         android:layout_marginTop="42dp"
         android:text="@string/app_name"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log Library"
+        android:id="@+id/logLibraryButton"
+        android:layout_marginTop="50dp"
+        android:onClick="moveStore"
+        android:layout_alignTop="@+id/logButton"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

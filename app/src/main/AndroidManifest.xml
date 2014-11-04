@@ -8,7 +8,7 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="21" />
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -31,6 +31,10 @@
         <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name=".LogStore"
+            android:label="@string/title_activity_log_store" >
         </activity>
     </application>
 
