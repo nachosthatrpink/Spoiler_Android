@@ -58,7 +58,7 @@ public class Logger extends ActionBarActivity {
     //created with run function to run every tick of logger
     public Runnable mTick = new Runnable(){
         public void run(){
-            TextView t = (TextView)findViewById(R.id.textView1);
+            TextView t = (TextView)findViewById(R.id.logView);
             Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             float speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
             t.setText(speed + "m/s");
@@ -69,7 +69,7 @@ public class Logger extends ActionBarActivity {
 
     //called on log start click
     public void logStart(View view){
-    	TextView t = (TextView)findViewById(R.id.textView1);
+    	TextView t = (TextView)findViewById(R.id.logView);
     	t.setText("Logging...");
 
         //following is for obtaining gps locations (and speeds)
@@ -84,7 +84,7 @@ public class Logger extends ActionBarActivity {
 
     //called on log stop click
     public void logEnd(View view){
-    	TextView t = (TextView)findViewById(R.id.textView1);
+    	TextView t = (TextView)findViewById(R.id.logView);
     	t.setText("Stopped Logging");
 
         mHandler.removeCallbacks(mTick);

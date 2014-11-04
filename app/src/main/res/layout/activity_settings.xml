@@ -11,7 +11,7 @@
     <!--android:background="#ffffffff">-->
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -32,24 +32,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 Seconds"
-            android:id="@+id/radioButton"
+            android:id="@+id/timeSelection1"
             android:textSize="@dimen/activity_vertical_margin" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 Seconds"
-            android:id="@+id/radioButton2"
+            android:id="@+id/timeSelection2"
             android:textSize="@dimen/activity_vertical_margin" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30 Seconds"
-            android:id="@+id/radioButton3"
+            android:id="@+id/timeSelection3"
             android:textSize="@dimen/activity_vertical_margin" />
     </RadioGroup>
 
+    <!-- Phil change the following to a more suitable type -->
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
