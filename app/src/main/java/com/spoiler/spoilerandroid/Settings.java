@@ -6,13 +6,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 
 public class Settings extends ActionBarActivity {
+
+    Intent startbuttonintent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
+
+        /** this will automatically send a five second break between log times
+        Intent intent = new Intent(Settings.this, Logger.class);
+        Bundle b = new Bundle();
+        b.putInt("value", 5);
+
+        intent.putExtras(b);
+        startActivity(intent);
+         */
 	}
 
 	@Override
@@ -39,4 +51,36 @@ public class Settings extends ActionBarActivity {
     	Intent intent = new Intent(view.getContext(), MainActivity.class);
     	startActivity(intent);
     }
+
+    //will change log time separation to five seconds
+    // issue instantly goes to logger page due to startActivity(intent);
+    public void fiveSec(View view){
+        Intent intent = new Intent(Settings.this, Logger.class);
+        Bundle b = new Bundle();
+        b.putInt("value",5);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    //will change log time separation to five seconds
+    // issue instantly goes to logger page due to startActivity(intent);
+    public void tenSec(View view){
+        Intent intent = new Intent(Settings.this, Logger.class);
+        Bundle b = new Bundle();
+        b.putInt("value",10);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+    //will change log time separation to five seconds
+    // issue instantly goes to logger page due to startActivity(intent);
+    public void thirtySec(View view){
+        Intent intent = new Intent(Settings.this, Logger.class);
+        Bundle b = new Bundle();
+        b.putInt("value",30);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
+
 }

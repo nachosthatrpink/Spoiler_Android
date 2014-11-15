@@ -300,9 +300,9 @@ int id startButton 0x7f07003f
 int id stopButton 0x7f07003d
 int id submit_area 0x7f070039
 int id tabMode 0x7f070002
-int id timeSelection1 0x7f070046
-int id timeSelection2 0x7f070047
-int id timeSelection3 0x7f070048
+int id timeSelection10Sec 0x7f070047
+int id timeSelection30Sec 0x7f070048
+int id timeSelection5Sec 0x7f070046
 int id title 0x7f07002b
 int id titleText 0x7f070043
 int id top_action_bar 0x7f070020

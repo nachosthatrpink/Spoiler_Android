@@ -32,22 +32,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 Seconds"
-            android:id="@+id/timeSelection1"
-            android:textSize="@dimen/activity_vertical_margin" />
+            android:id="@+id/timeSelection5Sec"
+            android:textSize="@dimen/activity_vertical_margin"
+            android:onClick="fiveSec"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 Seconds"
-            android:id="@+id/timeSelection2"
-            android:textSize="@dimen/activity_vertical_margin" />
+            android:id="@+id/timeSelection10Sec"
+            android:textSize="@dimen/activity_vertical_margin"
+            android:onClick="tenSec"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="30 Seconds"
-            android:id="@+id/timeSelection3"
-            android:textSize="@dimen/activity_vertical_margin" />
+            android:id="@+id/timeSelection30Sec"
+            android:textSize="@dimen/activity_vertical_margin"
+            android:onClick="thirtySec"/>
     </RadioGroup>
 
     <!-- Phil change the following to a more suitable type -->

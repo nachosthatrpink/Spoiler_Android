@@ -995,9 +995,9 @@ containing a value of this type.
         public static final int stopButton=0x7f07003d;
         public static final int submit_area=0x7f070039;
         public static final int tabMode=0x7f070002;
-        public static final int timeSelection1=0x7f070046;
-        public static final int timeSelection2=0x7f070047;
-        public static final int timeSelection3=0x7f070048;
+        public static final int timeSelection10Sec=0x7f070047;
+        public static final int timeSelection30Sec=0x7f070048;
+        public static final int timeSelection5Sec=0x7f070046;
         public static final int title=0x7f07002b;
         public static final int titleText=0x7f070043;
         public static final int top_action_bar=0x7f070020;
