@@ -1,11 +1,18 @@
 package com.spoiler.spoilerandroid;
 
 import android.content.Intent;
+import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import java.io.*;
+
+import java.io.FileInputStream;
 
 
 public class LogStore extends ActionBarActivity {
@@ -14,6 +21,34 @@ public class LogStore extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_store);
+
+
+        String text = "";
+        FileInputStream fin;
+
+        try
+        {
+
+            fin = openFileInput("logs.txt");
+
+            int c;
+            while((c = fin.read()) != -1){
+                text = text + Character.toString((char)c);
+            }
+            fin.close();
+
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            text= "Unable to find file!";
+        }
+
+        TextView t = (TextView)findViewById(R.id.logText);
+        t.setMovementMethod(new ScrollingMovementMethod());
+        t.setText(text);
+
+
     }
 
 

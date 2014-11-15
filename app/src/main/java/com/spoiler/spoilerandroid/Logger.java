@@ -11,17 +11,19 @@ import android.widget.TextView;
 import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
+import java.io.*;
 
 
 import android.os.Handler;  //used instead of timer
 
 public class Logger extends ActionBarActivity {
 
+    //THESE GLOBAL VARIABLES ARE PROBABLY REALLY BAD STYLE
     // the value that will store how many seconds between logs is desired
-    private int secondPass;
+    private int secondPass = 1;
 
     private Handler mHandler = new Handler();
-//    int i = 0; //just a placeholder counter for debugging
+    int i = 0; //just a placeholder counter for debugging
     private LocationManager locationManager;
     private LocationListener locationListener;
 
@@ -66,11 +68,37 @@ public class Logger extends ActionBarActivity {
     public Runnable mTick = new Runnable(){
         public void run(){
             TextView t = (TextView)findViewById(R.id.logView);
-            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            float speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
-            t.setText(speed + "m/s");
-//            i++;
-            mHandler.postDelayed(mTick, 1000);
+//            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//            float speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
+            t.setText(String.valueOf(i));
+            i++;
+
+
+
+            // Stream to write file
+            FileOutputStream fout;
+
+            try{
+                // Open an output stream
+                fout = openFileOutput("logs.txt", Context.MODE_APPEND);
+
+                //create temp string for log
+                String tempLog = "Current Speed: " + i + "\n";
+                // print current log
+                fout.write(tempLog.getBytes());
+
+                // Close our output stream
+                fout.close();
+            }
+            // Catches any error conditions
+            catch (IOException e){
+                System.err.println ("Unable to write to file");
+                System.exit(-1);
+            }
+
+            mHandler.postDelayed(mTick, secondPass * 1000);
+
+
         }
     };
 
@@ -79,12 +107,34 @@ public class Logger extends ActionBarActivity {
     	TextView t = (TextView)findViewById(R.id.logView);
     	t.setText("Logging...");
 
+        // Stream to write file
+        FileOutputStream fout;
+
+        try
+        {
+            // Open an output stream
+            fout = openFileOutput ("logs.txt", Context.MODE_APPEND);
+
+
+            String tempLog = "New Log Begin, rate: " + secondPass + "\n";
+            fout.write(tempLog.getBytes());
+
+            // Close our output stream
+            fout.close();
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            System.err.println ("Unable to write to file");
+            System.exit(-1);
+        }
+
+
         //following is for obtaining gps locations (and speeds)
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         mHandler.removeCallbacks(mTick);
-        mHandler.postDelayed(mTick, 1000);
-
+        mHandler.postDelayed(mTick, secondPass * 1000);
 
 
     }
