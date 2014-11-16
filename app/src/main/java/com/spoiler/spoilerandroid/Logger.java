@@ -1,5 +1,6 @@
 package com.spoiler.spoilerandroid;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
+import android.content.DialogInterface;
+import android.provider.Settings;
 import java.io.*;
 import java.util.Calendar;
 
@@ -90,6 +93,11 @@ public class Logger extends ActionBarActivity {
     public Runnable mTick = new Runnable(){
         public void run(){
             TextView t = (TextView)findViewById(R.id.logView);
+            //who knows if this next part works correctly
+            if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+                showSettingsAlert();
+            }
+
             Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             float speed = 0.0f;
             if (current != null){
@@ -130,6 +138,34 @@ public class Logger extends ActionBarActivity {
 
         }
     };
+
+    //the following function was taken mostly in part from http://www.androidhive.info/2012/07/android-gps-location-manager-tutorial/
+    public void showSettingsAlert(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(findViewById(android.R.id.content).getContext());
+
+        alertDialog.setTitle("Enabling GPS");
+        alertDialog.setMessage("GPS is required for Spoiler to run. Do you want to go to the settings menu now to activate GPS?");
+        alertDialog.setIcon(R.drawable.ic_launcher);
+
+        //settings button press
+        alertDialog.setPositiveButton("Settings", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                findViewById(android.R.id.content).getContext().startActivity(intent);
+            }
+        });
+
+        //cancel button press
+        alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        alertDialog.show();
+    }
+
+
 
     //called on log start click
     public void logStart(View view){

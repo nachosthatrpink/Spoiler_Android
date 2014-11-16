@@ -103,6 +103,9 @@ public class LogStore extends ActionBarActivity {
             System.exit(-1);
         }
 
+        TextView t = (TextView)findViewById(R.id.logText);
+        t.setText("");
+
     }
 
 }
