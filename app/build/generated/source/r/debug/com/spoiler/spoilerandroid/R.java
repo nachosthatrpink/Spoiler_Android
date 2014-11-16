@@ -966,7 +966,7 @@ containing a value of this type.
         public static final int listMode=0x7f070001;
         public static final int list_item=0x7f070029;
         public static final int logButton=0x7f070042;
-        public static final int logLibraryButton=0x7f070045;
+        public static final int logLibraryButton=0x7f070044;
         public static final int logText=0x7f07003e;
         public static final int logView=0x7f070041;
         public static final int middle=0x7f07000b;
@@ -1000,7 +1000,7 @@ containing a value of this type.
         public static final int timeSelection30Sec=0x7f070049;
         public static final int timeSelection5Sec=0x7f070047;
         public static final int title=0x7f07002b;
-        public static final int titleText=0x7f070044;
+        public static final int titleText=0x7f070045;
         public static final int top_action_bar=0x7f070020;
         public static final int up=0x7f070021;
         public static final int useLogo=0x7f070003;

@@ -12,11 +12,10 @@
         android:id="@+id/logButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="170dp"
         android:text="@string/begin_logging"
-        android:onClick="moveLog"/>
+        android:onClick="moveLog"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/settingsButton"
@@ -24,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/action_settings"
         android:onClick="moveSettings"
-        android:layout_below="@+id/homeButton"
+        android:layout_below="@+id/logLibraryButton"
         android:layout_centerHorizontal="true" />
 
     <TextView

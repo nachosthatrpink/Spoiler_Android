@@ -271,7 +271,7 @@ int id image 0x7f070027
 int id listMode 0x7f070001
 int id list_item 0x7f070029
 int id logButton 0x7f070042
-int id logLibraryButton 0x7f070045
+int id logLibraryButton 0x7f070044
 int id logText 0x7f07003e
 int id logView 0x7f070041
 int id middle 0x7f07000b
@@ -305,7 +305,7 @@ int id timeSelection10Sec 0x7f070048
 int id timeSelection30Sec 0x7f070049
 int id timeSelection5Sec 0x7f070047
 int id title 0x7f07002b
-int id titleText 0x7f070044
+int id titleText 0x7f070045
 int id top_action_bar 0x7f070020
 int id up 0x7f070021
 int id useLogo 0x7f070003

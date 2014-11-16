@@ -35,14 +35,29 @@ public class Logger extends ActionBarActivity {
 
 
 
-        b = getIntent().getExtras();
-        if(b != null)
-            secondPass = b.getInt("value");
-        else
-            secondPass = 5;
+        String text = "";
+        FileInputStream fin;
 
+        try
+        {
+
+            fin = openFileInput("config.txt");
+
+            int c;
+            while((c = fin.read()) != -1){
+                text = text + Character.toString((char)c);
+            }
+            secondPass = Integer.parseInt(text);
+            fin.close();
+
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            secondPass = 5;
+        }
         TextView t = (TextView)findViewById(R.id.logView);
-        t.setText("New log created every " + String.valueOf(secondPass) + "seconds.");
+        t.setText("New log every " + String.valueOf(secondPass) + " seconds.");
 	}
 
 	@Override
