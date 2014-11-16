@@ -10,21 +10,12 @@ import android.widget.RadioButton;
 
 public class Settings extends ActionBarActivity {
 
-    Intent startbuttonintent;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
 
-        /** this will automatically send a five second break between log times
-        Intent intent = new Intent(Settings.this, Logger.class);
-        Bundle b = new Bundle();
-        b.putInt("value", 5);
-
-        intent.putExtras(b);
-        startActivity(intent);
-         */
 	}
 
 	@Override
@@ -79,7 +70,6 @@ public class Settings extends ActionBarActivity {
         Bundle b = new Bundle();
         b.putInt("value",30);
         intent.putExtras(b);
-        startActivity(intent);
     }
 
 

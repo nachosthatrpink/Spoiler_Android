@@ -20,7 +20,8 @@ public class Logger extends ActionBarActivity {
 
     //THESE GLOBAL VARIABLES ARE PROBABLY REALLY BAD STYLE
     // the value that will store how many seconds between logs is desired
-    private int secondPass = 1;
+    private int secondPass;
+    private Bundle b;
 
     private Handler mHandler = new Handler();
     int i = 0; //just a placeholder counter for debugging
@@ -32,11 +33,16 @@ public class Logger extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_logger);
 
-        /** retrieves value from logger
-        Bundle b = getIntent().getExtras();
-        secondPass = b.getInt("value");
-         */
 
+
+        b = getIntent().getExtras();
+        if(b != null)
+            secondPass = b.getInt("value");
+        else
+            secondPass = 5;
+
+        TextView t = (TextView)findViewById(R.id.logView);
+        t.setText("New log created every " + String.valueOf(secondPass) + "seconds.");
 	}
 
 	@Override
