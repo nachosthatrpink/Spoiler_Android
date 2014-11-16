@@ -24,9 +24,11 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="79dp"
+        android:id="@+id/radioGroup2"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true">
+        android:layout_alignRight="@+id/homeButton"
+        android:layout_alignEnd="@+id/homeButton">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -53,16 +55,17 @@
             android:onClick="thirtySec"/>
     </RadioGroup>
 
-    <!-- Phil change the following to a more suitable type -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
+        android:text="Time Between Logs"
+        android:textSize="18dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Desired Amount of Seconds Between Logs"
-        android:textSize="18dp" />
+        android:layout_marginTop="45dp" />
+
+    <!-- Phil change the following to a more suitable type -->
 
 </RelativeLayout>
 <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/layout/activity_settings.xml -->

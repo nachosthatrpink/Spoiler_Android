@@ -12,6 +12,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.location.LocationListener;
 import java.io.*;
+import java.util.Calendar;
 
 
 import android.os.Handler;  //used instead of timer
@@ -141,10 +142,17 @@ public class Logger extends ActionBarActivity {
         try
         {
             // Open an output stream
+            Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+            int hour = c.get(Calendar.HOUR);
+            int minute = c.get(Calendar.MINUTE);
             fout = openFileOutput ("logs.txt", Context.MODE_APPEND);
 
 
-            String tempLog = "New Log Begin, rate: " + secondPass + "\n";
+
+            String tempLog = "New Log, Date/Time: " + (1+month) + "/" + day + "/" + year + " " + hour + ":" + minute + ", rate: " + secondPass + "\n";
             fout.write(tempLog.getBytes());
 
             // Close our output stream
