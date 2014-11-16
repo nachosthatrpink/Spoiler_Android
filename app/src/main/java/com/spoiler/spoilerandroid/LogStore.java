@@ -1,5 +1,6 @@
 package com.spoiler.spoilerandroid;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
@@ -76,6 +77,32 @@ public class LogStore extends ActionBarActivity {
     public void moveHome(View view){
         Intent intent = new Intent(view.getContext(), MainActivity.class);
         startActivity(intent);
+    }
+
+    //called on erase logs button click
+    public void eraseLogs(View view){
+
+        // Stream to write file
+        FileOutputStream fout;
+
+        try
+        {
+            // Open an output stream
+            fout = openFileOutput ("logs.txt", Context.MODE_PRIVATE);
+
+            //write empty string to the file to erase it
+            fout.write("".getBytes());
+
+            // Close our output stream
+            fout.close();
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            System.err.println ("Unable to write to file");
+            System.exit(-1);
+        }
+
     }
 
 }

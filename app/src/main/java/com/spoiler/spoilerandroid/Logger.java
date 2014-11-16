@@ -74,10 +74,17 @@ public class Logger extends ActionBarActivity {
     public Runnable mTick = new Runnable(){
         public void run(){
             TextView t = (TextView)findViewById(R.id.logView);
-//            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-//            float speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
-            t.setText(String.valueOf(i));
-            i++;
+            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+            float speed = 0.0f;
+            if (current != null){
+                speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
+                t.setText(String.valueOf(speed));
+            }else{
+                t.setText("No location available.");
+                mHandler.removeCallbacks(mTick);
+            }
+//            t.setText(String.valueOf(i));
+//            i++;
 
 
 
@@ -89,7 +96,7 @@ public class Logger extends ActionBarActivity {
                 fout = openFileOutput("logs.txt", Context.MODE_APPEND);
 
                 //create temp string for log
-                String tempLog = "Current Speed: " + i + "\n";
+                String tempLog = "Current Speed: " + speed + "\n";
                 // print current log
                 fout.write(tempLog.getBytes());
 

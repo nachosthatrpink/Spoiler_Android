@@ -250,7 +250,6 @@ int id action_settings 0x7f07004a
 int id activity_chooser_view_content 0x7f070025
 int id always 0x7f07000f
 int id beginning 0x7f07000a
-int id button 0x7f07003c
 int id checkbox 0x7f07002d
 int id collapseActionView 0x7f070011
 int id default_activity_button 0x7f070028
@@ -260,11 +259,12 @@ int id dropdown 0x7f070013
 int id editText 0x7f070046
 int id edit_query 0x7f070030
 int id end 0x7f07000c
+int id eraseButton 0x7f07003d
 int id expand_activities_button 0x7f070026
 int id expanded_menu 0x7f07002c
 int id home 0x7f070017
 int id homeAsUp 0x7f070005
-int id homeButton 0x7f07003f
+int id homeButton 0x7f07003c
 int id icon 0x7f07002a
 int id ifRoom 0x7f07000e
 int id image 0x7f070027
@@ -272,7 +272,7 @@ int id listMode 0x7f070001
 int id list_item 0x7f070029
 int id logButton 0x7f070042
 int id logLibraryButton 0x7f070045
-int id logText 0x7f07003d
+int id logText 0x7f07003e
 int id logView 0x7f070041
 int id middle 0x7f07000b
 int id never 0x7f07000d
@@ -298,7 +298,7 @@ int id showHome 0x7f070004
 int id showTitle 0x7f070006
 int id split_action_bar 0x7f07001e
 int id startButton 0x7f070040
-int id stopButton 0x7f07003e
+int id stopButton 0x7f07003f
 int id submit_area 0x7f070039
 int id tabMode 0x7f070002
 int id timeSelection10Sec 0x7f070048
