@@ -54,7 +54,7 @@
     </RadioGroup>
 
     <!-- Phil change the following to a more suitable type -->
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"

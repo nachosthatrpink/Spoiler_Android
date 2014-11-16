@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.spoiler.spoilerandroid.Settings">
+    tools:context="com.spoiler.spoilerandroid.Settings"
+    android:id="@+id/">
     <!--android:id="@+id/"-->
     <!--android:background="#ffffffff">-->
 
@@ -24,9 +25,11 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="79dp"
+        android:id="@+id/radioGroup2"
         android:layout_below="@+id/editText"
-        android:layout_centerHorizontal="true">
+        android:layout_alignRight="@+id/homeButton"
+        android:layout_alignEnd="@+id/homeButton">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -53,15 +56,16 @@
             android:onClick="thirtySec"/>
     </RadioGroup>
 
-    <!-- Phil change the following to a more suitable type -->
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editText"
+        android:text="Time Between Logs"
+        android:textSize="18dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Desired Amount of Seconds Between Logs"
-        android:textSize="18dp" />
+        android:layout_marginTop="48dp" />
+
+    <!-- Phil change the following to a more suitable type -->
 
 </RelativeLayout>
