@@ -31,6 +31,7 @@ public class Logger extends ActionBarActivity {
     int i = 0; //just a placeholder counter for debugging
     private LocationManager locationManager;
     private LocationListener locationListener;
+    private Location current = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,12 +94,9 @@ public class Logger extends ActionBarActivity {
     public Runnable mTick = new Runnable(){
         public void run(){
             TextView t = (TextView)findViewById(R.id.logView);
-            //who knows if this next part works correctly
-            if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
-                showSettingsAlert();
-            }
 
-            Location current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+//            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             float speed = 0.0f;
             if (current != null){
                 speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
@@ -166,47 +164,67 @@ public class Logger extends ActionBarActivity {
     }
 
 
-
     //called on log start click
     public void logStart(View view){
     	TextView t = (TextView)findViewById(R.id.logView);
-    	t.setText("Logging...");
-
-        // Stream to write file
-        FileOutputStream fout;
-
-        try
-        {
-            // Open an output stream
-            Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH);
-            int day = c.get(Calendar.DAY_OF_MONTH);
-            int hour = c.get(Calendar.HOUR);
-            int minute = c.get(Calendar.MINUTE);
-            fout = openFileOutput ("logs.txt", Context.MODE_APPEND);
-
-
-
-            String tempLog = "New Log, Date/Time: " + (1+month) + "/" + day + "/" + year + " " + hour + ":" + minute + ", rate: " + secondPass + "\n";
-            fout.write(tempLog.getBytes());
-
-            // Close our output stream
-            fout.close();
-        }
-        // Catches any error conditions
-        catch (IOException e)
-        {
-            System.err.println ("Unable to write to file");
-            System.exit(-1);
-        }
 
 
         //following is for obtaining gps locations (and speeds)
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
-        mHandler.removeCallbacks(mTick);
-        mHandler.postDelayed(mTick, secondPass * 1000);
+        locationListener = new LocationListener(){
+            public void onLocationChanged(Location location){
+                current = location;
+            }
+
+            public void onStatusChanged(String provider, int status, Bundle extras){}
+
+            public void onProviderEnabled(String provider) {}
+
+            public void onProviderDisabled(String provider) {}
+        };
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+
+
+        //who knows if this next part works correctly
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            showSettingsAlert();
+        }else {
+
+            t.setText("Logging...");
+
+
+            // Stream to write file
+            FileOutputStream fout;
+
+            try {
+                // Attach date and time to log
+                Calendar c = Calendar.getInstance();
+                int year = c.get(Calendar.YEAR);
+                int month = c.get(Calendar.MONTH);
+                int day = c.get(Calendar.DAY_OF_MONTH);
+                int hour = c.get(Calendar.HOUR);
+                int minute = c.get(Calendar.MINUTE);
+                fout = openFileOutput("logs.txt", Context.MODE_APPEND);
+
+
+                String tempLog = "New Log, Date/Time: " + (1 + month) + "/" + day + "/" + year + " " + hour + ":" + minute + ", rate: " + secondPass + "\n";
+                fout.write(tempLog.getBytes());
+
+                // Close our output stream
+                fout.close();
+            }
+            // Catches any error conditions
+            catch (IOException e) {
+                System.err.println("Unable to write to file");
+                System.exit(-1);
+            }
+
+
+            mHandler.removeCallbacks(mTick);
+            mHandler.postDelayed(mTick, secondPass * 1000);
+
+        }
 
 
     }
