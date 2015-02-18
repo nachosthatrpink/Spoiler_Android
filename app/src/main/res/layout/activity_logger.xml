@@ -42,9 +42,9 @@
         android:id="@+id/logView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/stopButton"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginBottom="41dp" />
 
 </RelativeLayout>
