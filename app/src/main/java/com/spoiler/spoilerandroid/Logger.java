@@ -93,45 +93,46 @@ public class Logger extends ActionBarActivity {
     //created with run function to run every tick of logger
     public Runnable mTick = new Runnable(){
         public void run(){
-            TextView t = (TextView)findViewById(R.id.logView);
+        TextView t = (TextView)findViewById(R.id.logView);
 
 
 //            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            float speed = 0.0f;
-            if (current != null){
-                speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
-                t.setText(String.valueOf(speed));
-            }else{
-                t.setText("No location available.");
-                mHandler.removeCallbacks(mTick);
-            }
+        float speed = 0.0f;
+        if (current != null){
+            speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
+            speed = speed * 2.23694f; //conversion from m/s to mph
+            t.setText(String.valueOf(speed));
+        }else{
+            t.setText("No location available.");
+            mHandler.removeCallbacks(mTick);
+        }
 //            t.setText(String.valueOf(i));
 //            i++;
 
 
 
-            // Stream to write file
-            FileOutputStream fout;
+        // Stream to write file
+        FileOutputStream fout;
 
-            try{
-                // Open an output stream
-                fout = openFileOutput("logs.txt", Context.MODE_APPEND);
+        try{
+            // Open an output stream
+            fout = openFileOutput("logs.txt", Context.MODE_APPEND);
 
-                //create temp string for log
-                String tempLog = "Current Speed: " + speed + "\n";
-                // print current log
-                fout.write(tempLog.getBytes());
+            //create temp string for log
+            String tempLog = "Current Speed: " + speed + "\n";
+            // print current log
+            fout.write(tempLog.getBytes());
 
-                // Close our output stream
-                fout.close();
-            }
-            // Catches any error conditions
-            catch (IOException e){
-                System.err.println ("Unable to write to file");
-                System.exit(-1);
-            }
+            // Close our output stream
+            fout.close();
+        }
+        // Catches any error conditions
+        catch (IOException e){
+            System.err.println ("Unable to write to file");
+            System.exit(-1);
+        }
 
-            mHandler.postDelayed(mTick, secondPass * 1000);
+        mHandler.postDelayed(mTick, secondPass * 1000);
 
 
         }
@@ -186,7 +187,7 @@ public class Logger extends ActionBarActivity {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
 
-        //who knows if this next part works correctly
+        //ensure that message box continues to pop up if previously canceled....i think it will every time log start button is pressed
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
             showSettingsAlert();
         }else {
@@ -206,7 +207,6 @@ public class Logger extends ActionBarActivity {
                 int hour = c.get(Calendar.HOUR);
                 int minute = c.get(Calendar.MINUTE);
                 fout = openFileOutput("logs.txt", Context.MODE_APPEND);
-
 
                 String tempLog = "New Log, Date/Time: " + (1 + month) + "/" + day + "/" + year + " " + hour + ":" + minute + ", rate: " + secondPass + "\n";
                 fout.write(tempLog.getBytes());
