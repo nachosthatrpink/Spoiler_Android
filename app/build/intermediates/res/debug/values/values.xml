@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <attr name="actionBarDivider" format="reference" />
@@ -78,12 +78,6 @@
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
     <color name="abc_search_url_text_selected">@android:color/black</color>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/values/colors.xml -->
-    <eat-comment />
-
-    <color name="black_overlay">#66000000</color>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
-    <eat-comment />
 
     <declare-styleable name="ActionBar">
 
@@ -210,16 +204,6 @@
         -->
         <attr name="expandActivityOverflowButtonDrawable" format="reference" />
     </declare-styleable>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/values/attrs.xml -->
-    <eat-comment />
-
-    <declare-styleable name="ButtonBarContainerTheme">
-        <attr name="metaButtonBarStyle" format="reference" />
-        <attr name="metaButtonBarButtonStyle" format="reference" />
-    </declare-styleable>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
-    <eat-comment />
-
     <declare-styleable name="CompatTextView">
 
         <!-- Present the text in ALL CAPS. This may use a small-caps form when available. -->
@@ -524,12 +508,12 @@
     <dimen name="abc_panel_menu_list_width">296dp</dimen>
     <dimen name="abc_search_view_preferred_width">320dip</dimen>
     <dimen name="abc_search_view_text_min_width">160dip</dimen>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/values/dimens.xml -->
     <eat-comment />
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
@@ -558,23 +542,20 @@
     <string name="abc_searchview_description_voice">Voice search</string>
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="action_settings">Settings</string>
     <string name="app_name">Spoiler Android</string>
     <string name="begin_logging">Begin Logging</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="hello_world">Hello world!</string>
     <string name="return_home">Return Home</string>
     <string name="start_log">Start</string>
     <string name="stop_log">Stop</string>
     <string name="title_activity_log_store">LogStore</string>
-    <string name="title_activity_log_store2">LogStore2</string>
     <string name="title_activity_logger">Logger</string>
     <string name="title_activity_settings">Settings</string>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/values/styles.xml -->
     <eat-comment />
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
@@ -588,24 +569,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
-
-    <style name="ButtonBar">
-        <item name="android:paddingLeft">2dp</item>
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingRight">2dp</item>
-        <item name="android:paddingBottom">0dp</item>
-        <item name="android:background">@android:drawable/bottom_bar</item>
-    </style>
-
-    <style name="ButtonBarButton" />
-
-    <style name="FullscreenTheme" parent="android:Theme.NoTitleBar">
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowBackground">@null</item>
-        <item name="metaButtonBarStyle">@style/ButtonBar</item>
-        <item name="metaButtonBarButtonStyle">@style/ButtonBarButton</item>
-    </style>
-    <!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
+    <!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/values/values.xml -->
     <eat-comment />
 
     <style name="TextAppearance.AppCompat.Base.CompactMenu.Dialog" parent="android:TextAppearance.Medium">
