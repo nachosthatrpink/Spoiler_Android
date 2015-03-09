@@ -45,12 +45,6 @@
             android:label="@string/title_activity_log_store"
             android:screenOrientation="sensor" >
         </activity>
-        <activity
-            android:name="com.spoiler.spoilerandroid.LogStore2"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_log_store2"
-            android:theme="@style/FullscreenTheme" >
-        </activity>
     </application>
 
 </manifest>
