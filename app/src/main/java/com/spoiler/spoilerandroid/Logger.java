@@ -32,6 +32,7 @@ public class Logger extends ActionBarActivity {
     private LocationManager locationManager;
     private LocationListener locationListener;
     private Location current = null;
+    private Calendar date;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -116,8 +117,14 @@ public class Logger extends ActionBarActivity {
         FileOutputStream fout;
 
         try{
+            int year = date.get(Calendar.YEAR);
+            int month = date.get(Calendar.MONTH);
+            int day = date.get(Calendar.DAY_OF_MONTH);
+            int hour = date.get(Calendar.HOUR);
+            int minute = date.get(Calendar.MINUTE);
+
             // Open an output stream
-            fout = openFileOutput("logs.txt", Context.MODE_APPEND);
+            fout = openFileOutput("Log: " +(1 + month) + "-" + day + "-" + year + "-" + hour + ":" + minute + ".txt", Context.MODE_APPEND);
 
             //create temp string for log
             String tempLog = "Current Speed: " + speed + "\n";
@@ -201,13 +208,15 @@ public class Logger extends ActionBarActivity {
 
             try {
                 // Attach date and time to log
-                Calendar c = Calendar.getInstance();
-                int year = c.get(Calendar.YEAR);
-                int month = c.get(Calendar.MONTH);
-                int day = c.get(Calendar.DAY_OF_MONTH);
-                int hour = c.get(Calendar.HOUR);
-                int minute = c.get(Calendar.MINUTE);
-                fout = openFileOutput("logs.txt", Context.MODE_APPEND);
+                date = Calendar.getInstance();
+                int year = date.get(Calendar.YEAR);
+                int month = date.get(Calendar.MONTH);
+                int day = date.get(Calendar.DAY_OF_MONTH);
+                int hour = date.get(Calendar.HOUR);
+                int minute = date.get(Calendar.MINUTE);
+
+                //fout = openFileOutput("logs.txt", Context.MODE_PRIVATE);
+                fout = openFileOutput("Log: " +(1 + month) + "-" + day + "-" + year + "-" + hour + ":" + minute + ".txt", Context.MODE_PRIVATE);
 
                 String tempLog = "New Log, Date/Time: " + (1 + month) + "/" + day + "/" + year + " " + hour + ":" + minute + ", rate: " + secondPass + "\n";
                 fout.write(tempLog.getBytes());

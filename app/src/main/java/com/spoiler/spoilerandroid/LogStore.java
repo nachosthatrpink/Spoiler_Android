@@ -16,6 +16,17 @@ import java.io.*;
 import java.io.FileInputStream;
 
 
+//this entire class will need to be rewritten, to accommodate for the logs now being named by date
+/*
+Plan as follows:
+-implement listview to show list of all logs
+-allow click on each log to open in a new window, could actually use this class for that
+-make displaying look nicer and not terrible
+
+Future:
+-make a graph feature to view speed over time
+-highlight hard accelerations
+ */
 public class LogStore extends ActionBarActivity {
 
     @Override
