@@ -5,7 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+// import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 
@@ -27,7 +27,6 @@ public class Settings extends ActionBarActivity {
         {
 
             fin = openFileInput("config.txt");
-
             int c;
             while((c = fin.read()) != -1){
                 secondPassText = secondPassText + Character.toString((char)c);
@@ -50,6 +49,38 @@ public class Settings extends ActionBarActivity {
             RadioButton r = (RadioButton)findViewById(R.id.timeSelection5Sec);
             r.setChecked(true);
         }
+
+        FileInputStream measFin;
+        String secondPassTextMeas = "";
+
+        try
+        {
+
+            measFin = openFileInput("measurement.txt");
+            int c;
+            while((c = measFin.read()) != -1){
+                secondPassTextMeas = secondPassTextMeas + Character.toString((char)c);
+            }
+            RadioButton r;
+
+            if(secondPassTextMeas.equals("metric"))
+                r = (RadioButton)findViewById(R.id.metricButton);
+            else if(secondPassTextMeas.equals("english"))
+                r = (RadioButton)findViewById(R.id.englishButton);
+            else
+                r = (RadioButton)findViewById(R.id.seaButton);
+            r.setChecked(true);
+            measFin.close();
+
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            RadioButton r = (RadioButton)findViewById(R.id.metricButton);
+            r.setChecked(true);
+        }
+
+
     }
 
     @Override
@@ -79,7 +110,6 @@ public class Settings extends ActionBarActivity {
     }
 
     //will change log time separation to five seconds
-    // issue instantly goes to logger page due to startActivity(intent);
     public void fiveSec(View view){
         FileOutputStream fileOutput;
 
@@ -88,7 +118,7 @@ public class Settings extends ActionBarActivity {
             // Open an output stream
             fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
-            // Print a line of text
+            // place a line of text in output stream
             String tempLog = "5";
             fileOutput.write(tempLog.getBytes());
 
@@ -103,7 +133,6 @@ public class Settings extends ActionBarActivity {
     }
 
     //will change log time separation to five seconds
-    // issue instantly goes to logger page due to startActivity(intent);
     public void tenSec(View view){
         FileOutputStream fileOutput;
 
@@ -127,7 +156,6 @@ public class Settings extends ActionBarActivity {
     }
 
     //will change log time separation to five seconds
-    // issue instantly goes to logger page due to startActivity(intent);
     public void thirtySec(View view){
         FileOutputStream fileOutput;
 
@@ -146,6 +174,64 @@ public class Settings extends ActionBarActivity {
         // Catches any error conditions
         catch (IOException e){
             System.err.println ("Unable to write to file");
+            System.exit(-1);
+        }
+    }
+
+    // cahnges the measurement type on click
+    public void metricButton(View view){
+        FileOutputStream fileOutput;
+
+        try{
+            // open and output stream
+            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+
+            String tempLog = "metric";
+            fileOutput.write(tempLog.getBytes());
+
+            fileOutput.close();
+        }
+        catch(IOException e){
+            System.err.println("Unable to write to file");
+            System.exit(-1);
+        }
+    }
+
+
+    // cahnges the measurement type on click
+    public void englishButton(View view){
+        FileOutputStream fileOutput;
+
+        try{
+            // open and output stream
+            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+
+            String tempLog = "english";
+            fileOutput.write(tempLog.getBytes());
+
+            fileOutput.close();
+        }
+        catch(IOException e){
+            System.err.println("Unable to write to file");
+            System.exit(-1);
+        }
+    }
+
+    // cahnges the measurement type on click
+    public void seaButton(View view){
+        FileOutputStream fileOutput;
+
+        try{
+            // open and output stream
+            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+
+            String tempLog = "sea";
+            fileOutput.write(tempLog.getBytes());
+
+            fileOutput.close();
+        }
+        catch(IOException e){
+            System.err.println("Unable to write to file");
             System.exit(-1);
         }
     }

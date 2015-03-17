@@ -6,7 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+// import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.location.Location;
@@ -25,6 +25,7 @@ public class Logger extends ActionBarActivity {
     //THESE GLOBAL VARIABLES ARE PROBABLY REALLY BAD STYLE
     // the value that will store how many seconds between logs is desired
     private int secondPass;
+    private String measurement;
     private Bundle b;
 
     private Handler mHandler = new Handler();
@@ -62,8 +63,33 @@ public class Logger extends ActionBarActivity {
         {
             secondPass = 5;
         }
+
+        try
+        {
+
+            fin = openFileInput("measurement.txt");
+
+            int c;
+            while((c = fin.read()) != -1){
+                text = text + Character.toString((char)c);
+            }
+            measurement = text;
+            fin.close();
+
+        }
+        // Catches any error conditions
+        catch (IOException e)
+        {
+            measurement = "metric";
+        }
+
         TextView t = (TextView)findViewById(R.id.logView);
-        t.setText("New log every " + String.valueOf(secondPass) + " seconds.");
+        if(measurement.equals("metric"))
+            t.setText("New log every " + String.valueOf(secondPass) + " seconds in km/h.");
+        else if(measurement.equals("english"))
+            t.setText("New log every " + String.valueOf(secondPass) + " seconds in mph.");
+        else
+            t.setText("New log every " + String.valueOf(secondPass) + " seconds in knots.");
 	}
 
 	@Override
@@ -102,7 +128,12 @@ public class Logger extends ActionBarActivity {
         float speed = 0.0f;
         if (current != null){
             speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
-            speed = speed * 2.23694f; //conversion from m/s to mph
+            if(measurement.equals("metric"))
+                speed = speed * 3600 * .0001f; // conversion m/s to km/h
+            else if(measurement.equals("english"))
+                speed = speed * 2.23694f; //conversion from m/s to mph
+            else
+                speed = speed * 1.9438f; // conversion from m/s to knots
             t.setText(String.valueOf(speed));
         }else{
             t.setText("No location available.");

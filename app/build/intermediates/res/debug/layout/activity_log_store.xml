@@ -24,14 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/logText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
         android:maxLines = "999999999"
         android:scrollbars="vertical"
-        android:layout_above="@+id/eraseButton" />
+        android:layout_above="@+id/homeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -45,4 +42,4 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
-<!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/layout/activity_log_store.xml -->
+<!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/layout/activity_log_store.xml -->
