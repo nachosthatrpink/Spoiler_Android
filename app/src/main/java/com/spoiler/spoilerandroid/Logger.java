@@ -45,6 +45,7 @@ public class Logger extends ActionBarActivity {
         String text = "";
         FileInputStream fin;
 
+        //for both of these, we need a more robust solution. Phil and I have discussed it over the telephone
         try
         {
 
@@ -124,10 +125,10 @@ public class Logger extends ActionBarActivity {
         TextView t = (TextView)findViewById(R.id.logView);
 
 
-//            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+//            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER); //wait why is this commented out?
         float speed = 0.0f;
         if (current != null){
-            speed = current.getSpeed(); //not sure if this works....it may on an actual device with gps enabled...
+            speed = current.getSpeed(); //get last known speed
             if(measurement.equals("metric"))
                 speed = speed * 3600 * .0001f; // conversion m/s to km/h
             else if(measurement.equals("english"))

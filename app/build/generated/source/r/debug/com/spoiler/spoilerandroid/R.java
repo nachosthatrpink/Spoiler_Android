@@ -854,8 +854,9 @@ containing a value of this type.
         public static final int list_item=0x7f070029;
         public static final int logButton=0x7f070043;
         public static final int logLibraryButton=0x7f070045;
-        public static final int logText=0x7f07003e;
+        public static final int logList=0x7f07003e;
         public static final int logTimeText=0x7f070048;
+        public static final int logTitle=0x7f070052;
         public static final int logView=0x7f070041;
         public static final int measurementGroup=0x7f07004e;
         public static final int measurementText=0x7f07004d;
@@ -932,7 +933,8 @@ containing a value of this type.
         public static final int activity_logger=0x7f030019;
         public static final int activity_main=0x7f03001a;
         public static final int activity_settings=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
+        public static final int list_row=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
     }
     public static final class menu {
         public static final int logger=0x7f0c0000;

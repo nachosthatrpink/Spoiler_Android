@@ -9,14 +9,15 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.*;
 
-import java.io.FileInputStream;
 
 
-//this entire class will need to be rewritten, to accommodate for the logs now being named by date
+//this class is being currently revised
 /*
 Plan as follows:
 -implement listview to show list of all logs
@@ -35,30 +36,12 @@ public class LogStore extends ActionBarActivity {
         setContentView(R.layout.activity_log_store);
 
 
-        String text = "";
-        FileInputStream fin;
+        File dirFiles = getApplicationContext().getFilesDir();
 
-        try
-        {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_row, R.id.logTitle, dirFiles.list());
 
-            fin = openFileInput("logs.txt");
-
-            int c;
-            while((c = fin.read()) != -1){
-                text = text + Character.toString((char)c);
-            }
-            fin.close();
-
-        }
-        // Catches any error conditions
-        catch (IOException e)
-        {
-            text= "Unable to find file!";
-        }
-
-        TextView t = (TextView)findViewById(R.id.logText);
-        t.setMovementMethod(new ScrollingMovementMethod());
-        t.setText(text);
+        ListView fileList = (ListView) findViewById(R.id.logList);
+        fileList.setAdapter(adapter);
 
 
     }
@@ -115,8 +98,8 @@ public class LogStore extends ActionBarActivity {
             System.exit(-1);
         }
 
-        TextView t = (TextView)findViewById(R.id.logText);
-        t.setText("");
+//        TextView t = (TextView)findViewById(R.id.logText);
+//        t.setText("");
 
     }
 

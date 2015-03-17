@@ -20,16 +20,6 @@
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/eraseButton" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logText"
-        android:maxLines = "999999999"
-        android:scrollbars="vertical"
-        android:layout_above="@+id/homeButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +29,14 @@
         android:onClick="eraseLogs"
         android:layout_marginLeft="59dp"
         android:layout_alignTop="@+id/homeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logList"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>
