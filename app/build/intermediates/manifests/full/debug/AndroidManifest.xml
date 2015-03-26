@@ -45,6 +45,12 @@
             android:label="@string/title_activity_log_store"
             android:screenOrientation="sensor" >
         </activity>
+        <activity
+            android:name="com.spoiler.spoilerandroid.LogView"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="LogView"
+            android:screenOrientation="sensor" >
+        </activity>
     </application>
 
 </manifest>

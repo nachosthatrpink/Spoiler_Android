@@ -2,6 +2,7 @@ package com.spoiler.spoilerandroid;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,12 +10,15 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.*;
-
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.nio.charset.Charset;
 
 
 //this class is being currently revised
@@ -42,6 +46,20 @@ public class LogStore extends ActionBarActivity {
 
         ListView fileList = (ListView) findViewById(R.id.logList);
         fileList.setAdapter(adapter);
+
+        fileList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View  view, int position, long id)
+            {
+
+
+                Intent intent = new Intent(view.getContext(), LogView.class);
+                String logTitle = (String) parent.getItemAtPosition(position);
+                intent.setData(Uri.parse(logTitle));
+                startActivity(intent);
+            }
+        });
 
 
     }

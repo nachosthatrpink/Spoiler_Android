@@ -45,6 +45,12 @@
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:screenOrientation="sensor" >
         </activity>
+        <activity
+            android:name=".LogView"
+            android:label="LogView"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" >
+        </activity>
     </application>
 
 </manifest>
