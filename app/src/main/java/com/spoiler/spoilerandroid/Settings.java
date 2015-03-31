@@ -16,13 +16,20 @@ import java.io.IOException;
 public class Settings extends ActionBarActivity {
 
 
-    @Override
+    /**
+     *
+     * @param savedInstanceState records the state of the settings activity
+     * @effects checks the corrects values of the radio buttons on this activity
+     * @effects creates the setting activity
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
         FileInputStream fin;
         String secondPassText = "";
+
+        // Check off the right radio button for the time selections
         try
         {
 
@@ -40,10 +47,11 @@ public class Settings extends ActionBarActivity {
             else
                 r = (RadioButton)findViewById(R.id.timeSelection30Sec);
             r.setChecked(true);
+
             fin.close();
 
         }
-        // Catches any error conditions
+
         catch (IOException e)
         {
             RadioButton r = (RadioButton)findViewById(R.id.timeSelection5Sec);
@@ -53,6 +61,7 @@ public class Settings extends ActionBarActivity {
         FileInputStream measFin;
         String secondPassTextMeas = "";
 
+        // Check off the right radio button for the measurement selections
         try
         {
 
@@ -83,12 +92,12 @@ public class Settings extends ActionBarActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.settings, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.settings, menu);
+//        return true;
+//    }
 
     // Removed this method because of the changed settings menu files
 //    @Override
@@ -103,13 +112,21 @@ public class Settings extends ActionBarActivity {
 //        return super.onOptionsItemSelected(item);
 //    }
 
-    //called on return home button click
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects return to the main activity
+     */
     public void moveHome(View view){
         Intent intent = new Intent(view.getContext(), MainActivity.class);
         startActivity(intent);
     }
 
-    //will change log time separation to five seconds
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and logs the 5 second radio button
+     */
     public void fiveSec(View view){
         FileOutputStream fileOutput;
 
@@ -132,7 +149,11 @@ public class Settings extends ActionBarActivity {
         }
     }
 
-    //will change log time separation to five seconds
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and logs using 10 second radio button
+     */
     public void tenSec(View view){
         FileOutputStream fileOutput;
 
@@ -155,7 +176,11 @@ public class Settings extends ActionBarActivity {
         }
     }
 
-    //will change log time separation to five seconds
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and logs using 30 second radio button
+     */
     public void thirtySec(View view){
         FileOutputStream fileOutput;
 
@@ -178,7 +203,12 @@ public class Settings extends ActionBarActivity {
         }
     }
 
-    // cahnges the measurement type on click
+
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and uses the metric button settings
+     */
     public void metricButton(View view){
         FileOutputStream fileOutput;
 
@@ -198,7 +228,11 @@ public class Settings extends ActionBarActivity {
     }
 
 
-    // cahnges the measurement type on click
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and uses the english button settings
+     */
     public void englishButton(View view){
         FileOutputStream fileOutput;
 
@@ -217,7 +251,12 @@ public class Settings extends ActionBarActivity {
         }
     }
 
-    // cahnges the measurement type on click
+
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects marks and uses the sea button settings
+     */
     public void seaButton(View view){
         FileOutputStream fileOutput;
 

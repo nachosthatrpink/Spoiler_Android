@@ -65,17 +65,18 @@ public class Logger extends ActionBarActivity {
             secondPass = 5;
         }
 
+        FileInputStream measFin;
         try
         {
 
-            fin = openFileInput("measurement.txt");
+            measFin = openFileInput("measurement.txt");
 
             int c;
-            while((c = fin.read()) != -1){
+            while((c = measFin.read()) != -1){
                 text = text + Character.toString((char)c);
             }
             measurement = text;
-            fin.close();
+            measFin.close();
 
         }
         // Catches any error conditions
