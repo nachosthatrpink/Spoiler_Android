@@ -55,7 +55,14 @@ public class Logger extends ActionBarActivity {
             while((c = fin.read()) != -1){
                 text = text + Character.toString((char)c);
             }
-            secondPass = Integer.parseInt(text);
+            String timeVal;
+            String measVal;
+            if(text.indexOf("/") != -1) {
+                timeVal = text.substring(0, text.indexOf("/"));
+                measVal = text.substring(text.indexOf("/") + 1);
+                secondPass = Integer.parseInt(timeVal);
+                measurement = measVal;
+            }
             fin.close();
 
         }
@@ -63,27 +70,9 @@ public class Logger extends ActionBarActivity {
         catch (IOException e)
         {
             secondPass = 5;
+            measurement = "english";
         }
 
-        FileInputStream measFin;
-        try
-        {
-
-            measFin = openFileInput("measurement.txt");
-
-            int c;
-            while((c = measFin.read()) != -1){
-                text = text + Character.toString((char)c);
-            }
-            measurement = text;
-            measFin.close();
-
-        }
-        // Catches any error conditions
-        catch (IOException e)
-        {
-            measurement = "metric";
-        }
 
         TextView t = (TextView)findViewById(R.id.logView);
         if(measurement.equals("metric"))

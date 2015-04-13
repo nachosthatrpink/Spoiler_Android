@@ -16,6 +16,9 @@ import java.io.IOException;
 public class Settings extends ActionBarActivity {
 
 
+    private static String measureValue = "";
+    private static String timeValue = "";
+
     /**
      *
      * @param savedInstanceState records the state of the settings activity
@@ -26,68 +29,31 @@ public class Settings extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        FileInputStream fin;
-        String secondPassText = "";
-
+        if(measureValue.equals(""))
+            measureValue = "english";
+        if(timeValue.equals(""))
+            timeValue = "5";
         // Check off the right radio button for the time selections
-        try
-        {
+        RadioButton r;
 
-            fin = openFileInput("config.txt");
-            int c;
-            while((c = fin.read()) != -1){
-                secondPassText = secondPassText + Character.toString((char)c);
-            }
-            RadioButton r;
+        if(timeValue.equals("30"))
+            r = (RadioButton)findViewById(R.id.timeSelection5Sec);
+        else if(timeValue.equals("10"))
+            r = (RadioButton)findViewById(R.id.timeSelection10Sec);
+        else
+            r = (RadioButton)findViewById(R.id.timeSelection30Sec);
+        r.setChecked(true);
 
-            if(secondPassText.equals("5"))
-                r = (RadioButton)findViewById(R.id.timeSelection5Sec);
-            else if(secondPassText.equals("10"))
-                r = (RadioButton)findViewById(R.id.timeSelection10Sec);
-            else
-                r = (RadioButton)findViewById(R.id.timeSelection30Sec);
-            r.setChecked(true);
-
-            fin.close();
-
-        }
-
-        catch (IOException e)
-        {
-            RadioButton r = (RadioButton)findViewById(R.id.timeSelection5Sec);
-            r.setChecked(true);
-        }
-
-        FileInputStream measFin;
-        String secondPassTextMeas = "";
 
         // Check off the right radio button for the measurement selections
-        try
-        {
+        if(measureValue.equals("sea"))
+            r = (RadioButton)findViewById(R.id.metricButton);
+        else if(measureValue.equals("metric"))
+            r = (RadioButton)findViewById(R.id.englishButton);
+        else
+            r = (RadioButton)findViewById(R.id.seaButton);
+        r.setChecked(true);
 
-            measFin = openFileInput("measurement.txt");
-            int c;
-            while((c = measFin.read()) != -1){
-                secondPassTextMeas = secondPassTextMeas + Character.toString((char)c);
-            }
-            RadioButton r;
-
-            if(secondPassTextMeas.equals("metric"))
-                r = (RadioButton)findViewById(R.id.metricButton);
-            else if(secondPassTextMeas.equals("english"))
-                r = (RadioButton)findViewById(R.id.englishButton);
-            else
-                r = (RadioButton)findViewById(R.id.seaButton);
-            r.setChecked(true);
-            measFin.close();
-
-        }
-        // Catches any error conditions
-        catch (IOException e)
-        {
-            RadioButton r = (RadioButton)findViewById(R.id.metricButton);
-            r.setChecked(true);
-        }
 
 
     }
@@ -136,7 +102,8 @@ public class Settings extends ActionBarActivity {
             fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
             // place a line of text in output stream
-            String tempLog = "5";
+            timeValue = "5";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             // Close our output stream
@@ -163,7 +130,8 @@ public class Settings extends ActionBarActivity {
             fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
             // Print a line of text
-            String tempLog = "10";
+            timeValue = "10";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             // Close our output stream
@@ -190,7 +158,8 @@ public class Settings extends ActionBarActivity {
             fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
             // Print a line of text
-            String tempLog = "30";
+            timeValue = "30";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             // Close our output stream
@@ -214,9 +183,10 @@ public class Settings extends ActionBarActivity {
 
         try{
             // open and output stream
-            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+            fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
-            String tempLog = "metric";
+            measureValue = "metric";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             fileOutput.close();
@@ -238,9 +208,10 @@ public class Settings extends ActionBarActivity {
 
         try{
             // open and output stream
-            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+            fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
-            String tempLog = "english";
+            measureValue = "english";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             fileOutput.close();
@@ -262,9 +233,10 @@ public class Settings extends ActionBarActivity {
 
         try{
             // open and output stream
-            fileOutput = openFileOutput ("measurement.txt", Context.MODE_PRIVATE);
+            fileOutput = openFileOutput ("config.txt", Context.MODE_PRIVATE);
 
-            String tempLog = "sea";
+            measureValue = "sea";
+            String tempLog = timeValue + "/" + measureValue;
             fileOutput.write(tempLog.getBytes());
 
             fileOutput.close();
