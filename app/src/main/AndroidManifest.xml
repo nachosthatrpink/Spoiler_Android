@@ -51,6 +51,12 @@
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
             android:screenOrientation="sensor" >
         </activity>
+        <activity
+            android:name=".LogGraph"
+            android:label="LogGraph"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="sensor" >
+        </activity>
     </application>
 
 </manifest>

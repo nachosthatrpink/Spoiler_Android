@@ -1,9 +1,12 @@
 package com.spoiler.spoilerandroid;
 
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
 import android.widget.TextView;
 
 import java.io.FileInputStream;
@@ -42,6 +45,13 @@ public class LogView extends ActionBarActivity {
         t.setMovementMethod(new ScrollingMovementMethod());
         t.setText(text);
 
+    }
+
+    //called on the graph button click, set intent with the same data that came in here
+    public void startGraph(View view){
+        Intent intent = new Intent(view.getContext(), LogGraph.class);
+        intent.setData(Uri.parse(getIntent().getData().toString()));
+        startActivity(intent);
     }
 
 

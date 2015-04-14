@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spoiler_Android.iml" filepath="$PROJECT_DIR$/Spoiler_Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidplot-core-0.6.1.jar/androidplot-core-0.6.1.jar.iml" filepath="$PROJECT_DIR$/androidplot-core-0.6.1.jar/androidplot-core-0.6.1.jar.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

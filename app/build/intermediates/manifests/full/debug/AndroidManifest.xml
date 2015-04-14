@@ -51,6 +51,12 @@
             android:label="LogView"
             android:screenOrientation="sensor" >
         </activity>
+        <activity
+            android:name="com.spoiler.spoilerandroid.LogGraph"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="LogGraph"
+            android:screenOrientation="sensor" >
+        </activity>
     </application>
 
 </manifest>
