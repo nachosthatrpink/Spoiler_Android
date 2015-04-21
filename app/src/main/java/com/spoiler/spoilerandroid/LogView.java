@@ -54,5 +54,11 @@ public class LogView extends ActionBarActivity {
         startActivity(intent);
     }
 
+    //called on back button click
+    public void backToLogs(View view){
+        Intent intent = new Intent(view.getContext(), LogStore.class);
+        startActivity(intent);
+    }
+
 
 }
