@@ -22,6 +22,7 @@ import android.os.Handler;  //used instead of timer
 
 public class Logger extends ActionBarActivity {
 
+    //THESE GLOBAL VARIABLES ARE PROBABLY REALLY BAD STYLE
     // the value that will store how many seconds between logs is desired
     private int secondPass;
     private String measurement;
@@ -44,6 +45,7 @@ public class Logger extends ActionBarActivity {
         String text = "";
         FileInputStream fin;
 
+        //for both of these, we need a more robust solution. Phil and I have discussed it over the telephone
         try
         {
 
@@ -114,15 +116,15 @@ public class Logger extends ActionBarActivity {
 
 
 //            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER); //wait why is this commented out?
-        float speed = (float)0.0;
+        float speed = 0.0f;
         if (current != null){
             speed = current.getSpeed(); //get last known speed
             if(measurement.equals("metric"))
-                speed = speed * 3600 * (float) .0001; // conversion m/s to km/h
+                speed = speed * 3600 * .0001f; // conversion m/s to km/h
             else if(measurement.equals("english"))
-                speed = speed * (float) 2.23694; //conversion from m/s to mph
+                speed = speed * 2.23694f; //conversion from m/s to mph
             else
-                speed = speed * (float) 1.9438; // conversion from m/s to knots
+                speed = speed * 1.9438f; // conversion from m/s to knots
             t.setText(String.valueOf(speed));
         }else{
             t.setText("No location available.");

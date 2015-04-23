@@ -37,21 +37,21 @@ public class Settings extends ActionBarActivity {
         RadioButton r;
 
         if(timeValue.equals("30"))
-            r = (RadioButton)findViewById(R.id.timeSelection30Sec);
+            r = (RadioButton)findViewById(R.id.timeSelection5Sec);
         else if(timeValue.equals("10"))
             r = (RadioButton)findViewById(R.id.timeSelection10Sec);
         else
-            r = (RadioButton)findViewById(R.id.timeSelection5Sec);
+            r = (RadioButton)findViewById(R.id.timeSelection30Sec);
         r.setChecked(true);
 
 
         // Check off the right radio button for the measurement selections
         if(measureValue.equals("sea"))
-            r = (RadioButton)findViewById(R.id.seaButton);
-        else if(measureValue.equals("metric"))
             r = (RadioButton)findViewById(R.id.metricButton);
-        else
+        else if(measureValue.equals("metric"))
             r = (RadioButton)findViewById(R.id.englishButton);
+        else
+            r = (RadioButton)findViewById(R.id.seaButton);
         r.setChecked(true);
 
 
