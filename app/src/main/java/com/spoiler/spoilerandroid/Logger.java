@@ -22,7 +22,6 @@ import android.os.Handler;  //used instead of timer
 
 public class Logger extends ActionBarActivity {
 
-    //THESE GLOBAL VARIABLES ARE PROBABLY REALLY BAD STYLE
     // the value that will store how many seconds between logs is desired
     private int secondPass;
     private String measurement;
@@ -35,17 +34,16 @@ public class Logger extends ActionBarActivity {
     private Location current = null;
     private Calendar date;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_logger);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_logger);
 
 
 
         String text = "";
         FileInputStream fin;
 
-        //for both of these, we need a more robust solution. Phil and I have discussed it over the telephone
         try
         {
 
@@ -81,14 +79,14 @@ public class Logger extends ActionBarActivity {
             t.setText("New log every " + String.valueOf(secondPass) + " seconds in mph.");
         else
             t.setText("New log every " + String.valueOf(secondPass) + " seconds in knots.");
-	}
+    }
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.logger, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.logger, menu);
+        return true;
+    }
 
     // Removed this method because of the changed logger menu files
 //	@Override
@@ -102,67 +100,67 @@ public class Logger extends ActionBarActivity {
 //		}
 //		return super.onOptionsItemSelected(item);
 //	}
-	
-	//called on return home button click
+
+    //called on return home button click
     public void moveHome(View view){
-    	Intent intent = new Intent(view.getContext(), MainActivity.class);
-    	startActivity(intent);
+        Intent intent = new Intent(view.getContext(), MainActivity.class);
+        startActivity(intent);
     }
 
     //created with run function to run every tick of logger
     public Runnable mTick = new Runnable(){
         public void run(){
-        TextView t = (TextView)findViewById(R.id.logView);
+            TextView t = (TextView)findViewById(R.id.logView);
 
 
 //            current = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER); //wait why is this commented out?
-        float speed = 0.0f;
-        if (current != null){
-            speed = current.getSpeed(); //get last known speed
-            if(measurement.equals("metric"))
-                speed = speed * 3600 * .0001f; // conversion m/s to km/h
-            else if(measurement.equals("english"))
-                speed = speed * 2.23694f; //conversion from m/s to mph
-            else
-                speed = speed * 1.9438f; // conversion from m/s to knots
-            t.setText(String.valueOf(speed));
-        }else{
-            t.setText("No location available.");
-            mHandler.removeCallbacks(mTick);
-        }
+            float speed = (float)0.0;
+            if (current != null){
+                speed = current.getSpeed(); //get last known speed
+                if(measurement.equals("metric"))
+                    speed = speed * 3600 * (float) .0001; // conversion m/s to km/h
+                else if(measurement.equals("english"))
+                    speed = speed * (float) 2.23694; //conversion from m/s to mph
+                else
+                    speed = speed * (float) 1.9438; // conversion from m/s to knots
+                t.setText(String.valueOf(speed));
+            }else{
+                t.setText("No location available.");
+                mHandler.removeCallbacks(mTick);
+            }
 //            t.setText(String.valueOf(i));
 //            i++;
 
 
 
-        // Stream to write file
-        FileOutputStream fout;
+            // Stream to write file
+            FileOutputStream fout;
 
-        try{
-            int year = date.get(Calendar.YEAR);
-            int month = date.get(Calendar.MONTH);
-            int day = date.get(Calendar.DAY_OF_MONTH);
-            int hour = date.get(Calendar.HOUR);
-            int minute = date.get(Calendar.MINUTE);
+            try{
+                int year = date.get(Calendar.YEAR);
+                int month = date.get(Calendar.MONTH);
+                int day = date.get(Calendar.DAY_OF_MONTH);
+                int hour = date.get(Calendar.HOUR);
+                int minute = date.get(Calendar.MINUTE);
 
-            // Open an output stream
-            fout = openFileOutput("Log: " +(1 + month) + "-" + day + "-" + year + "-" + hour + ":" + minute + ".txt", Context.MODE_APPEND);
+                // Open an output stream
+                fout = openFileOutput("Log: " +(1 + month) + "-" + day + "-" + year + "-" + hour + ":" + minute + ".txt", Context.MODE_APPEND);
 
-            //create temp string for log
-            String tempLog = "Current Speed: " + speed + "\n";
-            // print current log
-            fout.write(tempLog.getBytes());
+                //create temp string for log
+                String tempLog = "Current Speed: " + speed + "\n";
+                // print current log
+                fout.write(tempLog.getBytes());
 
-            // Close our output stream
-            fout.close();
-        }
-        // Catches any error conditions
-        catch (IOException e){
-            System.err.println ("Unable to write to file");
-            System.exit(-1);
-        }
+                // Close our output stream
+                fout.close();
+            }
+            // Catches any error conditions
+            catch (IOException e){
+                System.err.println ("Unable to write to file");
+                System.exit(-1);
+            }
 
-        mHandler.postDelayed(mTick, secondPass * 1000);
+            mHandler.postDelayed(mTick, secondPass * 1000);
 
 
         }
@@ -197,7 +195,7 @@ public class Logger extends ActionBarActivity {
 
     //called on log start click
     public void logStart(View view){
-    	TextView t = (TextView)findViewById(R.id.logView);
+        TextView t = (TextView)findViewById(R.id.logView);
 
 
         //following is for obtaining gps locations (and speeds)
@@ -263,8 +261,8 @@ public class Logger extends ActionBarActivity {
 
     //called on log stop click
     public void logEnd(View view){
-    	TextView t = (TextView)findViewById(R.id.logView);
-    	t.setText("Stopped Logging");
+        TextView t = (TextView)findViewById(R.id.logView);
+        t.setText("Stopped Logging");
 
         mHandler.removeCallbacks(mTick);
     }
