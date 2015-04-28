@@ -10,16 +10,24 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
     <application
-        android:debuggable="true"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="@string/app_name"
             android:screenOrientation="sensor" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,32 +37,32 @@
         </activity>
         <activity
             android:name=".Logger"
-            android:label="@string/title_activity_logger"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="@string/title_activity_logger"
             android:screenOrientation="sensor" >
         </activity>
         <activity
             android:name=".Settings"
-            android:label="@string/title_activity_settings"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="@string/title_activity_settings"
             android:screenOrientation="sensor" >
         </activity>
         <activity
             android:name=".LogStore"
-            android:label="@string/title_activity_log_store"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="@string/title_activity_log_store"
             android:screenOrientation="sensor" >
         </activity>
         <activity
             android:name=".LogView"
-            android:label="LogView"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="LogView"
             android:screenOrientation="sensor" >
         </activity>
         <activity
             android:name=".LogGraph"
-            android:label="LogGraph"
             android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:label="LogGraph"
             android:screenOrientation="sensor" >
         </activity>
     </application>

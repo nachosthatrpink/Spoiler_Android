@@ -847,10 +847,10 @@ containing a value of this type.
         public static final int dialog=0x7f080012;
         public static final int disableHome=0x7f080008;
         public static final int dropdown=0x7f080013;
-        public static final int editText=0x7f08004e;
+        public static final int editText=0x7f080050;
         public static final int edit_query=0x7f080030;
         public static final int end=0x7f08000c;
-        public static final int englishButton=0x7f080054;
+        public static final int englishButton=0x7f080056;
         public static final int eraseButton=0x7f08003e;
         public static final int expand_activities_button=0x7f080026;
         public static final int expanded_menu=0x7f08002c;
@@ -867,12 +867,11 @@ containing a value of this type.
         public static final int logData=0x7f080040;
         public static final int logLibraryButton=0x7f080049;
         public static final int logList=0x7f08003f;
-        public static final int logTimeText=0x7f08004c;
-        public static final int logTitle=0x7f080057;
+        public static final int logTimeText=0x7f08004e;
+        public static final int logTitle=0x7f08005b;
         public static final int logView=0x7f080045;
-        public static final int measurementGroup=0x7f080052;
-        public static final int measurementText=0x7f080051;
-        public static final int metricButton=0x7f080053;
+        public static final int measurementText=0x7f080053;
+        public static final int metricButton=0x7f080055;
         public static final int middle=0x7f08000b;
         public static final int never=0x7f08000d;
         public static final int none=0x7f080009;
@@ -880,8 +879,9 @@ containing a value of this type.
         public static final int progress_circular=0x7f080018;
         public static final int progress_horizontal=0x7f080019;
         public static final int radio=0x7f08002f;
-        public static final int rightArrow=0x7f080056;
-        public static final int seaButton=0x7f080055;
+        public static final int rightArrow=0x7f08005a;
+        public static final int scrollView=0x7f08004b;
+        public static final int seaButton=0x7f080057;
         public static final int search_badge=0x7f080032;
         public static final int search_bar=0x7f080031;
         public static final int search_button=0x7f080033;
@@ -892,21 +892,25 @@ containing a value of this type.
         public static final int search_plate=0x7f080036;
         public static final int search_src_text=0x7f080037;
         public static final int search_voice_btn=0x7f08003b;
+        public static final int setSpeed=0x7f08004c;
+        public static final int settingGroup=0x7f08004d;
         public static final int settingsButton=0x7f080048;
         public static final int shortcut=0x7f08002e;
         public static final int showCustom=0x7f080007;
         public static final int showHome=0x7f080004;
         public static final int showTitle=0x7f080006;
+        public static final int speedRestraintText=0x7f080058;
+        public static final int speedRestraintValueText=0x7f080059;
         public static final int split_action_bar=0x7f08001e;
         public static final int spoilerImage=0x7f080046;
         public static final int startButton=0x7f080044;
         public static final int stopButton=0x7f080043;
         public static final int submit_area=0x7f080039;
         public static final int tabMode=0x7f080002;
-        public static final int timeSelection10Sec=0x7f08004f;
-        public static final int timeSelection30Sec=0x7f080050;
-        public static final int timeSelection5Sec=0x7f08004d;
-        public static final int timeSettingGroup=0x7f08004b;
+        public static final int timeSelection10Sec=0x7f080051;
+        public static final int timeSelection30Sec=0x7f080052;
+        public static final int timeSelection5Sec=0x7f08004f;
+        public static final int timeSettingGroup=0x7f080054;
         public static final int title=0x7f08002b;
         public static final int titleText=0x7f08004a;
         public static final int top_action_bar=0x7f080020;
@@ -981,6 +985,7 @@ containing a value of this type.
         public static final int title_activity_log_store=0x7f0b0014;
         public static final int title_activity_logger=0x7f0b0015;
         public static final int title_activity_settings=0x7f0b0016;
+        public static final int title_activity_speed_limit_set=0x7f0b0017;
     }
     public static final class style {
         /** 

@@ -14,20 +14,51 @@
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="42dp"
         android:text="@string/return_home"
         android:onClick="moveHome"
         android:textSize="@dimen/activity_horizontal_margin"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/timeSettingGroup"
-        android:layout_alignEnd="@+id/timeSettingGroup" />
+        android:layout_toRightOf="@+id/scrollView"
+        android:layout_toEndOf="@+id/scrollView" />
+
+    <Button
+        android:id="@+id/setSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Speed Limit"
+        android:onClick="speedSet"
+        android:textSize="@dimen/activity_horizontal_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+    </ScrollView>
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/timeSettingGroup"
-        android:layout_below="@+id/logTimeText"
-        android:layout_centerHorizontal="true">
+        android:id="@+id/settingGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/homeButton"
+        android:layout_below="@+id/scrollView">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logTimeText"
+            android:text="Time Between Logs"
+            android:textSize="18dp"
+            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -61,42 +92,24 @@
             android:layout_below="@+id/timeSelection10Sec"
             android:layout_alignLeft="@+id/timeSelection10Sec"
             android:layout_alignStart="@+id/timeSelection10Sec" />
-    </RadioGroup>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logTimeText"
-        android:text="Time Between Logs"
-        android:textSize="18dp"
-        android:layout_marginTop="21dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/measurementText"
-        android:text="Measurement Type"
-        android:textSize="18dp"
-        android:layout_marginTop="35dp"
-        android:layout_below="@+id/timeSettingGroup"
-        android:layout_centerHorizontal="true" />
-
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/measurementText"
-        android:id="@+id/measurementGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/measurementText"
+            android:text="Measurement Type"
+            android:textSize="18dp"
+            android:layout_marginTop="21dp"
+            android:layout_below="@+id/timeSettingGroup"
+            android:layout_centerHorizontal="true" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Metric System"
             android:onClick="metricButton"
-            android:id="@+id/metricButton" />
+            android:id="@+id/metricButton"
+            android:layout_marginTop="23dp" />
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -111,9 +124,30 @@
             android:onClick="seaButton"
             android:text="Sea Speed"
             android:id="@+id/seaButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/speedRestraintText"
+            android:text="Limited Speed Limit"
+            android:textSize="18dp"
+            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/speedRestraintValueText"
+            android:text=""
+            android:textSize="18dp"
+            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
     </RadioGroup>
 
     <!-- Phil change the following to a more suitable type -->
 
 </RelativeLayout>
-<!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/layout/activity_settings.xml -->
+<!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/layout/activity_settings.xml -->

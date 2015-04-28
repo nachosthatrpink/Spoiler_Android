@@ -4,10 +4,14 @@ import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.View.OnClickListener;
 import android.view.Menu;
 // import android.view.MenuItem;
+import android.app.*;
 import android.view.View;
-import android.widget.RadioButton;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.*;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -86,6 +90,33 @@ public class Settings extends ActionBarActivity {
     public void moveHome(View view){
         Intent intent = new Intent(view.getContext(), MainActivity.class);
         startActivity(intent);
+
+
+
+
+    }
+
+    /**
+     *
+     * @param view the layout of settings activity
+     * @effects return to the main activity
+     */
+    public void speedSet(View view){
+        PopupWindow popUp;
+        LinearLayout layout;
+        TextView tv;
+        LayoutParams params;
+        LinearLayout mainLayout;
+        Button but;
+
+        popUp = new PopupWindow(this);
+        layout = new LinearLayout(this);
+        mainLayout = new LinearLayout(this);
+        tv = new TextView(this);
+        but = new Button(this);
+        but.setText("Click Me");
+        popUp.showAtLocation(mainLayout, Gravity.BOTTOM, 10, 10);
+        popUp.update(50, 50, 300, 80);
     }
 
     /**
