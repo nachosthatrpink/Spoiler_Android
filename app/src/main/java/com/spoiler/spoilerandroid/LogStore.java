@@ -72,19 +72,6 @@ public class LogStore extends ActionBarActivity {
         return true;
     }
 
-    // Removed this method because of the changed log store menu files
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
 
     //called on return home button click
     public void moveHome(View view){
@@ -92,33 +79,6 @@ public class LogStore extends ActionBarActivity {
         startActivity(intent);
     }
 
-    //called on erase logs button click
-    public void eraseLogs(View view){
 
-        // Stream to write file
-        FileOutputStream fout;
-
-        try
-        {
-            // Open an output stream
-            fout = openFileOutput ("logs.txt", Context.MODE_PRIVATE);
-
-            //write empty string to the file to erase it
-            fout.write("".getBytes());
-
-            // Close our output stream
-            fout.close();
-        }
-        // Catches any error conditions
-        catch (IOException e)
-        {
-            System.err.println ("Unable to write to file");
-            System.exit(-1);
-        }
-
-//        TextView t = (TextView)findViewById(R.id.logText);
-//        t.setText("");
-
-    }
 
 }

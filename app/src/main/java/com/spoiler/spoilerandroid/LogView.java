@@ -1,6 +1,7 @@
 package com.spoiler.spoilerandroid;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -47,6 +48,8 @@ public class LogView extends ActionBarActivity {
 
     }
 
+
+
     //called on the graph button click, set intent with the same data that came in here
     public void startGraph(View view){
         Intent intent = new Intent(view.getContext(), LogGraph.class);
@@ -60,5 +63,11 @@ public class LogView extends ActionBarActivity {
         startActivity(intent);
     }
 
+    //called on the delete button
+    public void deleteLog(View view){
+        String filename = getIntent().getData().toString();
+        view.getContext().deleteFile(filename);
+        backToLogs(view);
+    }
 
 }

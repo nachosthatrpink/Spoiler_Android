@@ -36,9 +36,20 @@
         android:text="Back to Logs"
         android:id="@+id/back_button"
         android:onClick="backToLogs"
-        android:layout_marginLeft="50dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginStart="35dp"
         android:layout_below="@+id/logData"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/delete_button"
+        android:onClick="deleteLog"
+        android:layout_below="@+id/logData"
+        android:layout_toLeftOf="@+id/graph_button"
+        android:layout_toStartOf="@+id/graph_button" />
+
 </RelativeLayout>

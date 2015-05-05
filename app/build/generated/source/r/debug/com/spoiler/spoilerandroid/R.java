@@ -820,9 +820,10 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_chevron_right_grey600_24dp=0x7f020057;
-        public static final int ic_launcher=0x7f020058;
-        public static final int spoiler=0x7f020059;
+        public static final int ic_action_discard=0x7f020057;
+        public static final int ic_chevron_right_grey600_24dp=0x7f020058;
+        public static final int ic_launcher=0x7f020059;
+        public static final int spoiler=0x7f02005a;
     }
     public static final class id {
         public static final int SpeedPlot=0x7f08003c;
@@ -839,11 +840,13 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f080024;
         public static final int activity_chooser_view_content=0x7f080025;
         public static final int always=0x7f08000f;
-        public static final int back_button=0x7f080042;
+        public static final int back_button=0x7f080041;
         public static final int beginning=0x7f08000a;
         public static final int checkbox=0x7f08002d;
         public static final int collapseActionView=0x7f080011;
         public static final int default_activity_button=0x7f080028;
+        public static final int delete=0x7f08005c;
+        public static final int delete_button=0x7f080042;
         public static final int dialog=0x7f080012;
         public static final int disableHome=0x7f080008;
         public static final int dropdown=0x7f080013;
@@ -851,10 +854,9 @@ containing a value of this type.
         public static final int edit_query=0x7f080030;
         public static final int end=0x7f08000c;
         public static final int englishButton=0x7f080056;
-        public static final int eraseButton=0x7f08003e;
         public static final int expand_activities_button=0x7f080026;
         public static final int expanded_menu=0x7f08002c;
-        public static final int graph_button=0x7f080041;
+        public static final int graph_button=0x7f080040;
         public static final int home=0x7f080017;
         public static final int homeAsUp=0x7f080005;
         public static final int homeButton=0x7f08003d;
@@ -864,9 +866,9 @@ containing a value of this type.
         public static final int listMode=0x7f080001;
         public static final int list_item=0x7f080029;
         public static final int logButton=0x7f080047;
-        public static final int logData=0x7f080040;
+        public static final int logData=0x7f08003f;
         public static final int logLibraryButton=0x7f080049;
-        public static final int logList=0x7f08003f;
+        public static final int logList=0x7f08003e;
         public static final int logTimeText=0x7f08004e;
         public static final int logTitle=0x7f08005b;
         public static final int logView=0x7f080045;

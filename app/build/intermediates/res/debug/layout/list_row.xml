@@ -15,12 +15,13 @@
         android:layout_marginRight="6dip"
         android:contentDescription="TODO" />
 
+
     <TextView
         android:id="@+id/logTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop = "10dip"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/delete"
+        android:layout_toEndOf="@+id/delete" />
 
-</RelativeLayout><!-- From: file:/C:/Users/Phil/Documents/Projects/SpoilerProject/Spoiler_Android/app/src/main/res/layout/list_row.xml -->
+</RelativeLayout><!-- From: file:/C:/Users/vargaa4/AndroidstudioProjects/Spoiler_Android/app/src/main/res/layout/list_row.xml -->
