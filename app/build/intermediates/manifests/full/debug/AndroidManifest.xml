@@ -65,6 +65,10 @@
             android:label="LogGraph"
             android:screenOrientation="sensor" >
         </activity>
+        <activity
+            android:name="com.spoiler.spoilerandroid.DialogBox"
+            android:label="@string/title_activity_dialog_box" >
+        </activity>
     </application>
 
 </manifest>

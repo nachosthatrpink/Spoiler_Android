@@ -842,10 +842,12 @@ containing a value of this type.
         public static final int always=0x7f08000f;
         public static final int back_button=0x7f080041;
         public static final int beginning=0x7f08000a;
+        public static final int button1=0x7f08005c;
+        public static final int button2=0x7f08005a;
         public static final int checkbox=0x7f08002d;
         public static final int collapseActionView=0x7f080011;
         public static final int default_activity_button=0x7f080028;
-        public static final int delete=0x7f08005c;
+        public static final int delete=0x7f08005f;
         public static final int delete_button=0x7f080042;
         public static final int dialog=0x7f080012;
         public static final int disableHome=0x7f080008;
@@ -870,7 +872,7 @@ containing a value of this type.
         public static final int logLibraryButton=0x7f080049;
         public static final int logList=0x7f08003e;
         public static final int logTimeText=0x7f08004e;
-        public static final int logTitle=0x7f08005b;
+        public static final int logTitle=0x7f08005e;
         public static final int logView=0x7f080045;
         public static final int measurementText=0x7f080053;
         public static final int metricButton=0x7f080055;
@@ -878,10 +880,11 @@ containing a value of this type.
         public static final int never=0x7f08000d;
         public static final int none=0x7f080009;
         public static final int normal=0x7f080000;
+        public static final int numberPicker=0x7f08005b;
         public static final int progress_circular=0x7f080018;
         public static final int progress_horizontal=0x7f080019;
         public static final int radio=0x7f08002f;
-        public static final int rightArrow=0x7f08005a;
+        public static final int rightArrow=0x7f08005d;
         public static final int scrollView=0x7f08004b;
         public static final int seaButton=0x7f080057;
         public static final int search_badge=0x7f080032;
@@ -954,8 +957,9 @@ containing a value of this type.
         public static final int activity_logger=0x7f03001b;
         public static final int activity_main=0x7f03001c;
         public static final int activity_settings=0x7f03001d;
-        public static final int list_row=0x7f03001e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int dialog_speed_set=0x7f03001e;
+        public static final int list_row=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030020;
     }
     public static final class menu {
         public static final int logger=0x7f0d0000;
@@ -984,10 +988,11 @@ containing a value of this type.
         public static final int return_home=0x7f0b0011;
         public static final int start_log=0x7f0b0012;
         public static final int stop_log=0x7f0b0013;
-        public static final int title_activity_log_store=0x7f0b0014;
-        public static final int title_activity_logger=0x7f0b0015;
-        public static final int title_activity_settings=0x7f0b0016;
-        public static final int title_activity_speed_limit_set=0x7f0b0017;
+        public static final int title_activity_dialog_box=0x7f0b0014;
+        public static final int title_activity_log_store=0x7f0b0015;
+        public static final int title_activity_logger=0x7f0b0016;
+        public static final int title_activity_settings=0x7f0b0017;
+        public static final int title_activity_speed_limit_set=0x7f0b0018;
     }
     public static final class style {
         /** 

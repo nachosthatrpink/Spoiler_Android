@@ -12,5 +12,6 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_log_store">LogStore</string>
     <string name="title_activity_speed_limit_set">SpeedLimitSet</string>
+    <string name="title_activity_dialog_box">DialogBox</string>
 
 </resources>

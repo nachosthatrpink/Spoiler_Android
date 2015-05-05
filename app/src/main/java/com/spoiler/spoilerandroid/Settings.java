@@ -4,10 +4,8 @@ import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.View.OnClickListener;
-import android.view.Menu;
-// import android.view.MenuItem;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.app.*;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -17,7 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Settings extends ActionBarActivity {
+public class Settings extends Activity{
 
 
     private static String measureValue = "";
@@ -102,21 +100,52 @@ public class Settings extends ActionBarActivity {
      * @effects return to the main activity
      */
     public void speedSet(View view){
-        PopupWindow popUp;
-        LinearLayout layout;
-        TextView tv;
-        LayoutParams params;
-        LinearLayout mainLayout;
-        Button but;
+        Context context = this;
+        final Dialog dialog = new Dialog(
+                context);
 
-        popUp = new PopupWindow(this);
-        layout = new LinearLayout(this);
-        mainLayout = new LinearLayout(this);
-        tv = new TextView(this);
-        but = new Button(this);
-        but.setText("Click Me");
-        popUp.showAtLocation(mainLayout, Gravity.BOTTOM, 10, 10);
-        popUp.update(50, 50, 300, 80);
+        // set title
+        dialog.setTitle("Set Speed");
+
+        dialog.setContentView(R.layout.dialog_speed_set);
+        Button b1 = (Button) dialog.findViewById(R.id.button1);
+        Button b2 = (Button) dialog.findViewById(R.id.button2);
+        final NumberPicker np = (NumberPicker) dialog.findViewById(R.id.numberPicker);
+        np.setMaxValue(100);
+        np.setMinValue(0);
+        np.setWrapSelectorWheel(false);
+        //np.setOnValueChangedListener(this);
+//        b1.setOnClickListener(new OnClickListener() {
+//             public void onClick(View vi) {
+//                 dialog.dismiss();
+//             }
+//        });
+
+
+        // set dialog message
+//        dialog
+//                .setMessage("Select a Speed:")
+//                .setCancelable(false)
+//                .s("Yes",new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog,int id) {
+//                        // if this button is clicked, close
+//                        // current activity
+//                        Settings.this.finish();
+//                    }
+//                })
+//                .setNegativeButton("No",new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog,int id) {
+//                        // if this button is clicked, just close
+//                        // the dialog box and do nothing
+//                        dialog.cancel();
+//                    }
+//                });
+
+        // create alert dialog
+//        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        dialog.show();
     }
 
     /**
